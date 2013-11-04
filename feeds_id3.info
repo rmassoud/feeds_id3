@@ -1,0 +1,7 @@
+name = Feeds ID3 Parser
+description = Parse a media file and extracts ID3 tags from it.
+package = Feeds
+dependencies[] = feeds
+dependencies[] = getid3
+core = 7.x
+

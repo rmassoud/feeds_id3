@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * Implements hook_feeds_plugins().
+ */
+function feeds_id3_feeds_plugins() {
+  return array(
+    'FeedsID3Parser' => array(
+      'name' => t('ID3 parser'),
+      'description' => t('Parse ID3 info.'),
+      'handler' => array(
+        'parent' => 'FeedsParser',
+        'class' => 'FeedsID3Parser',
+        'file' => 'FeedsID3Parser.inc',
+        'path' => drupal_get_path('module', 'feeds_id3'),
+      ),
+    ),
+  );
+}
+
+function feeds_id3_enable() {
+  cache_clear_all('plugins:feeds:plugins', 'cache');
+}
